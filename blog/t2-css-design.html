@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teague DBC: CSS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Me</a>
+  </div>
+
+  <div id="title">
+  <h1>What's the Difference?!</h1>
+  <h2>Margin, Border, and Padding</h2>
+  <h4>January 2, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="#"><!-- Archive 1--> </a></li>
+        <li><a href="#"><!-- Archive 2--> </a></li>
+        <li><a href="#"><!-- Archive 3--> </a></li>
+        <li><a href="#"><!-- Archive 4--> </a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+      <p>
+        Much of CSS involves positioning the "blocks", images, text, etc., of HTML in such a way that enhances the user's experience. In order to make these elements both "eye-catching" and easy to navigate, it's important to understand how to use margins, borders, and padding.
+      </p>
+
+      <p>
+    Below is a simple illustration showing the placement of and relationship between margin, border, and padding around its content:
+    <div><img src="t2_css_MBP.png" /></div>
+
+     </p>
+     <p>
+        Let's start with the border as it is the simplest concept of the three. The border is exactly what it states - a border that goes around your text, content, image, etc. A border can be manipulated in terms of style, such as solid or dotted; width, such as 5px or 10px; and/or color, such as black or blue. Moreover, the designer can choose to use the same OR different styles, widths, and colors on each side of the border by specifying which side (i.e., top, bottom, left, right).
+     </p>
+        For example, look at the image below:
+        <div><img src="t2_css_border.png" /></div>
+        The top border is pink and dotted, the bottom border is cornflower blue and solid, and the sides do not have visible borders. Thus, the CSS code would be written as:
+        <div> div {
+          border-top: 2px pink dotted;
+          border-bottom: 2px cornflower blue solid
+        } </div>
+
+        Simple, right?
+     <p>
+        Next, we'll discuss padding. Padding, as seen in the diagram above, is the space between the actual content and the border. Thus, it is applied to the inside of the element to determine how near or far your element's content will be from the border. As with border, the specific value for padding around the content can be the same or different for each side.
+     </p>
+     <p>
+        Look at this image:
+        <div><img src="t2_css_padding.png" /></div>
+        Here, it is visible that there is only extra space placed between the border and the content on the left side of the content (specifically, the padding is 20px for the left side of the content). Thus, the code would be written as:
+        <div> div {
+          padding-left: 20px
+          } </div>
+          You don't have to write "padding-right: 0px, padding-bottom: 0px, padding-top: 0px", as 0px is the default width. However, if you wish to include this for practice in the beginning, feel free to until it sinks in!
+        </p>
+        <p>
+        Finally, let's talk about margins. I'm sure you've heard the term "margin" when desigining in Word documents (or even when writing on looseleaf)! In CSS, the margin is the space outside of the border, and determines how far away this element is from other elements. In other words, the margin clears an area outside of the border and, unlike the border, it is completely transparent. Again, as with both border and padding, each side for the margin (i.e., top, bottom, right, left) can be the same or different.
+     </p>
+     <p>
+        Check out these two images.
+        <div><img src="/t2_css_marginvisible.png" /></div>
+        <div><img src="/t2_css_margin.png" /></div>
+        <div>
+      The first image shows the outline of the margin that we implemented (highlighted in light orange), while the second shows what the image actually looks like (remember: the margin space is transparent). The code for this example would look like this:
+      <div>
+          p {
+          margin-left: 20px;
+          margin-right: 40px;
+          margin-top: 100px;
+          margin-bottom: 200px;
+          } </div>
+        </p>
+    </div>
+  </body>
+</html>
+
