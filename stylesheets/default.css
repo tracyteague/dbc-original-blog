@@ -1,0 +1,87 @@
+html {
+  background-color: black;
+}
+
+ul {
+  float: left;
+  width: 100px;
+  height: 100%;
+  position: fixed;
+  background-color: #B2B0A5;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: #FFE692;
+}
+
+h1 {
+  color: white;
+  font-style: 48px;
+  font-weight: bolder;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 180px;
+}
+
+span {
+  color: #FFE692;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+img {
+  width: 85%;
+  margin-right: 20px;
+  float: right;
+  display: block;
+}
+
+#intro {
+  color: #FFE692;
+  margin-top: 400px;
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h2 {
+  color: white;
+  font-style: 40px;
+  font-weight: bolder;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 180px;
+}
+
+p {
+  color: #B2B0A5;
+  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#blogs {
+  margin-left: 150px;
+  border: 2px solid #FFE692;
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+}
+
+#aboutme {
+  border: 2px solid #FFE692;
+  display: inline-block;
+  text-align: center;
+  padding-right: 10px;
+  width: 40%;
+}
+
+
+#socialmedia {
+
+}
