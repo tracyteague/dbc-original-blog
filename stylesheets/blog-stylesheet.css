@@ -74,6 +74,11 @@ margin-top: 10px;
 float: right;
 }
 
+#archives > ul > a {
+  color: black;
+  font-family: Arial;
+}
+
 #title {
 margin-top: 10px;
 background-color: #B0BAFF;
