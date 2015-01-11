@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays vs. Hashes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="http://tracyteague.github.io/blog/index.html">Home</a>
+      <a href="#">About Me</a>
+      <a href="mailto:tracy.teague05@gmail.com">Contact Me</a>
+    </span>
+  </div>
+
+  <div id="title">
+  <h1>What's the Difference?! Part 2</h1>
+  <h2>Arrays vs. Hashes</h2>
+  <h4>January 9, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="#"><!-- Archive 1--> </a></li>
+        <li><a href="#"><!-- Archive 2--> </a></li>
+        <li><a href="#"><!-- Archive 3--> </a></li>
+        <li><a href="#"><!-- Archive 4--> </a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+<p>
+  Both arrays and hashes are essentially collections used to store and look-up data, but what exactly is the difference between an array and a hash; what do each look like; and how do we decide which to use?
+</p>
+
+<p>
+  An array is an ordered collection of any object, thus, it can be viewed as more of a list. Arrays use integers as indexes to reference a specific object within this list, and begin with an index of 0 (i.e., array[0]).
+</p>
+Let's use an example to see what this array will look like. You’re given a list of multiple choice answers to your social studies scan-tron test, and want to locate the answer to question #9 (obviously, you made a note-to-self that you wrote “a”, but want to find out if it was actually “d”).
+</p>
+
+<p class="ruby">
+test_answers[a,b,c,d,a,b,c,d,a,b,c,d,a,b,c,d]<br>
+<br>
+test_answer[8]<br>
+<br>
+#This would print out "a"<br>
+#As a reminder, we write [8] and not [9] because the index starts at [0]!
+</p>
+
+<p>
+Boom - you got it right! If only you knew the answers were in such a repetitive “abcd” order, how much time you would have saved studying…
+</p>
+
+<p>
+If you’re still a bit confused, here’s another example: think of a race in the Olympics. If you’re watching track and have a list of the names of the runners in the order they placed, you could find out who came in third by calling the third-place index (array[2]) to find the associated name.
+</p>
+
+<p>
+Now that we’ve covered arrays, let’s talk about hashes. Hashes are collections of pairs of information, with each pair containing a key, or name, and a value.  Hashes are not ordered, and thus, one would use a key or value to retrieve the corresponding data rather than an index number. Hashes are more helpful when someone may want to look-up the name of an object or item, but the object or item wouldn’t necessarily be easy to find with a placement or order in a group.
+</p>
+
+<p>
+As mentioned in Codecademy explanations, a helpful way to think of a hash is to compare it to a dictionary. A dictionary essentially has a key (the word) and a value (the definition of the word). Check out this example:
+</p>
+
+<p class="ruby">
+word_definition {<br>
+“happy” => “joyful”,<br>
+“sad” => “depressed”,<br>
+“content” => “satisfied”,<br>
+}<br>
+<br>
+word_definition[“happy”]<br>
+<br>
+#this would return “joyful”<br>
+</p>
+
+<p>
+If you’re still a bit confused, since I know you would probably never need to look up the meaning of “happy”, think about categories in Award Shows. If you wanted to look-up the winner for “Best Actor”, it would be way more to difficult to figure out how many awards were presented, the order they were presented, what number “Best Actor” was announced, etc. - you’d want to be able to find out right away by associating “Best Actor” with “Paul Rudd”! (Yes, he’s great).
+</p>
+
+<p>I hope this explanation of arrays and hashes was clear and that you now understand the basics of what each one entails and when one might be useful over the other. Thank you for checking out my blog and feel free to reach out to me with questions or feedback!
+  </p>
+    </div>
+  </body>
+</html>
+

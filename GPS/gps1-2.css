@@ -1,0 +1,40 @@
+/* include your css here */
+
+html {
+  background-color: black;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+.answer {
+  border: 2px dotted blue;
+  padding-bottom: 10px;
+  height: 100px;
+  width: 800px;
+  margin: 20px auto;
+
+}
+
+h3 {
+  color: yellow;
+  margin-left: 10px;
+}
+
+p {
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 250px;
+}
