@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enumerable#map</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Me</a>
+  </div>
+
+  <div id="title">
+  <h1>Enumerable#map</h1>
+  <h2>A lesson on .map, and how it's different from .each</h2>
+  <h4>January 13, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="http://tracyteague.github.io/blog/t3-arrays-hashes.html">U1W3: What's the Difference?! Part 2: Arrays vs. Hashes</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c3_thinking-style.html">U1W3: A Reflection on Phase 0, Unit 1: Thinking Style and Learning</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t2-css-design.html">U1W2: What's the Difference?! Margin, Border, and Padding</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t1-git-blog.html">U1W1: Git Bloggin': Version Control, git, and GitHub</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c1-chefs-kitchen.html">U1W1: Chefs in the Kitchen: Getting the knives sharpened and the food prepped</a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+    <h4>Array, Hash, .each</h4>
+    <p>
+      Before we get into a lesson on enumerable#map, let’s do a quick review of arrays, hashes, and the .each method as they are all related and rather “key” to enumerable.
+    </p>
+
+    <p>
+      Array: An array is an “ordered, integer-indexed collection of any object”. It looks like this:
+    </p>
+
+    <p class=“ruby”>
+      names = [“Tracy”, “Randy”, “Denise”, “Justin”, “Nicky”]<br>
+      puts names[0] #=> “Tracy”<br>
+      puts names [1] #=> “Randy”<br>
+      #and so on…
+    </p>
+
+    <p>
+      Hash: A hash is a “collection of key-value pairs”. So, using the above example, we could turn the array into a hash to look this:
+    </p>
+
+    <p class=“ruby”>
+      names = { <br>
+      “daughter” => “Tracy”,<br>
+      “father” => “Randy”,<br>
+      “mother” => “Denise”,<br>
+      “brother” => “Justin”,<br>
+      “pet” => “Nicky”,<br>
+      }<br>
+      <br>
+      puts names[“daughter”] # => “Tracy”<br>
+      puts names[“Nicky”] # => “pet”<br>
+    </p>
+
+    <p>
+      .each: The .each method iterates over the given enumerable, running the block for each value. A simple example looks like this:
+    </p>
+
+    <p class="ruby">
+      names = [“Nick”, “James”]<br>
+      names.each { | name | puts name + “ likes soccer!” }<br>
+      # => “Nick likes soccer!”<br>
+      # => “James like soccer!”<br>
+    </p>
+
+    <h4>Enumerable</h4>
+    <p>
+      Now, onto enumerable...<br>
+      A rather wordy definition: Enumerable is a “module that provides a set of methods to traverse, search, sort, and manipulate objects” and must include the method “.each” which yields successive members of this collection.
+    </p>
+
+    <p>
+      A super basic explanation: Enumerable gives you several useful ways of doing something to every element of a collection object (such as an array or hash). We use it because it's incredibly helpful and saves mucho time when building programs or websites.
+    </p>
+
+    <h4>Enumerable#map</h4>
+
+    <p>
+      Finally! Let's get to enumerable#map...<br>
+
+      Basically, .map is a transformation method - you’re remapping your original object through some sort of transformation.
+    </p>
+
+    <p>
+      Check out this simple example:
+    </p>
+
+    <p class="ruby">
+      (1..4).map { | i | i * i } #=> [1,4,9,16]
+    </p>
+
+    <p>
+      Note: “map” is non-destructive, meaning it will transform a copy of the array without altering the original. In order to make change the original array, or to be “destructive”, you would simply add an exclamation point, and would use “map!”.
+    <p>
+
+    <h4>Wait…so what’s difference between .map and .each?</h4>
+
+    <p>
+     Again, .each simply iterates over the given enumerable, running the block for each value. It discards the return value of the block and simply returns the original object it was called on:
+   </p>
+
+   <p class="ruby">
+     [1,2,3].each do | i |<br>
+     i + 1<br>
+     end #=> [1, 2, 3]<br>
+   </p>
+
+   <p>
+     On the other hand, .map sets the current element being iterated over to the return value of the block, and then returns a new object with those changes:
+   </p>
+
+     <p class="ruby">
+       [1, 2, 3].map do | i |<br>
+       i + 1<br>
+       end #=> [2, 3, 4]<br>
+     </p>
+
+    <p>
+      ...so it “maps” each element to a new one using the block given.
+    </p>
+
+    <p>
+      Let’s check out one final example combining the two:
+    </p>
+
+    <p class="ruby">
+      student_name = [“joe”, “devin”]<br>
+      <br>
+      #below, we map one array to another and convert each element with the rule that will be provided<br>
+      <br>
+      student_name.map! { |student_name| student_name.capitalize }<br>
+      #now, in this example, names will be “Joe” and “Devin"<br>
+      <br>
+      student_name.each { | name | puts name + “ is a student. “ }<br>
+      <br>
+      #output<br>
+      # Joe is a student.<br>
+      # Devin is a student.<br>
+    </p>
+
+    <h4>That about wraps it up!</h4>
+
+    <p>
+     Feel free to check out some more information on .map and/or enumerable with these helpful resources!</p>
+      <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-map">Ruby Docs</a><br>
+      <a href="http://ruby.bastardsbook.com/chapters/enumerables/">Bastards Book</a><br>
+      <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">Blog Post</a><br>
+      <a href="http://stackoverflow.com/questions/9586989/difference-between-map-and-each">Stack Overflow</a><br>
+    </p>
+  </body>
+</html>
+
