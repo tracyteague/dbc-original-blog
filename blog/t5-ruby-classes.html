@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Classin' It Up!</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Me</a>
+  </div>
+
+  <div id="title">
+  <h1>Classin It Up!</h1>
+  <h2>Classes, instance methods, and instance variables</h2>
+  <h4>January 23, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="http://tracyteague.github.io/blog/t3-arrays-hashes.html">U1W3: What's the Difference?! Part 2: Arrays vs. Hashes</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c3_thinking-style.html">U1W3: A Reflection on Phase 0, Unit 1: Thinking Style and Learning</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t2-css-design.html">U1W2: What's the Difference?! Margin, Border, and Padding</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t1-git-blog.html">U1W1: Git Bloggin': Version Control, git, and GitHub</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c1-chefs-kitchen.html">U1W1: Chefs in the Kitchen: Getting the knives sharpened and the food prepped</a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+    <p>
+      Thankfully, the creators of Ruby have provided us with several ways to organize and store our information. You can use an array to hold a simple, ordered list of items, or you can use a hash to hold a list of items with key-value pairs.
+    </p>
+    <p>
+      So what’s next? Classes, of course! So we can collect all of our objects and methods to group them into one simple…well…class!
+    </p>
+
+    <h4>WHY CLASSES?</h4>
+
+    <p>
+      Defining a class lets you group behaviors (methods) into convenient bundles so that you can quickly create many objects that behave essentially the same way. Classes are, at heart, a way to organize objects and methods (Thanks, David Black! You are one Well-Grounded Rubyist).
+    </p>
+
+    <h4>INSTANCE METHODS AND INSTANCE VARIABLES</h4>
+
+    <p>
+      As class methods are methods that are called on a class, instance methods are methods that are called on an instance of a class. Another way to say this is that class methods are executed in context of their arguments, while instance methods, in addition to arguments, are executed in the context of the state of the object.
+    </p>
+
+    <p>
+      Instance variables are variables that can be used by all instances of the class (rather than being specific to one method inside the single def method…end). They enable an individual object to remember its associated information or data, and can be distinguished from other variables by placing the @ sign before the variable name (e.g., @variable vs. variable).
+    </p>
+
+    <p>
+      This may all seem a bit wordy, so let’s dive into an example to further demonstrate what this means - we’ll keep it simple!
+    </p>
+
+    <h4>CLASSIN’ IT UP: CHECK OUT MY COOL BACKPACK!</h4>
+
+    <p>
+      I’m a girl, I like to shop…let’s say I bought a really cool Aztec-printed, funky-colored backpack (yes, I have a weird obsession with patterned backpacks) and I reaaally love it, so I want to leave a good review for others who are considering to buy it! (Note: there are obvious several components to setting up online reviews, but again, we’re keeping it super simple so this lesson focuses more on class structure than review details).
+    </p>
+
+    <p>
+      To make it easier to organize and store different information, let’s make a class, ProductReview:
+    </p>
+
+     <p class="ruby">
+      class ProductReview<br>
+      end<br>
+    </p>
+
+    <p>
+      Inside this class, we want to create an initialize method to set up some parameters for the information that will be important. It’s often helpful to use the special method “initialize” as that method will be executed every time you create a new instance of the class.
+    </p>
+
+    <p>
+      We’ll use the name of the store, its location, the price of the backpack, and a review of the backpack:
+    </p>
+
+     <p class="ruby">
+      class ProductReview<br>
+        def initialize(store, location, price, review)<br>
+          @store = store<br>
+          @location = location<br>
+          @price = price.to_f<br>
+          @review = review<br>
+       end<br>
+      end
+    </p>
+
+    <p>
+      # See the @ signs - now those are each instance variables so that they will be accessible throughout the entire class.
+    </p>
+
+    <p>
+      Now that we have our variables, let’s add in the methods for each variable, so that the review will return the information that we want to share!
+    </p>
+
+     <p class="ruby">
+      class ProductReview<br>
+        def initialize(store, location, price, review)<br>
+          @store = store<br>
+          @location = location<br>
+          @price = price.to_f<br>
+          @review = review<br>
+       end<br>
+      <br>
+      def store<br>
+       return "Store: " + @store<br>
+      end<br>
+      <br>
+      def location<br>
+       return "Location: " + @location<br>
+      end<br>
+      <br>
+      def price<br>
+      if @price < 20.00<br>
+        return "$"<br>
+      elsif @price > 30.00<br>
+        return "$$"<br>
+      elsif @price > 40.00<br>
+        return "$$$"<br>
+      else<br>
+        return "$$$$"<br>
+      end<br>
+      end<br>
+      <br>
+      def review<br>
+       @review<br>
+      end<br>
+      <br>
+      end
+    </p>
+
+    <p>
+      Awesome! Let’s test it out - I bought a backpack from Urban Outfitters in New York, NY, paid $39.50 for it and loved it! We’ll create a new
+    </p>
+
+    <p class="ruby">
+      tracy = ProductReview.new(“Urban Outfitters“, “New York, NY", "39.50", "I love this backpack - it's so worth the price!")<br>
+      <br>
+      # Here, .new is a “constructor”, with the purpose of creating and returning a new instance of the class. So, we’re sending a message to our class (ProductReview) that we want to create a new review (tracy)<br>
+      <br>
+      p tracy.store<br>
+      p tracy.location<br>
+      p tracy.price<br>
+      p tracy.review<br>
+      <br>
+      # Calling each method on “tracy” and printing individually to reveal my review!
+    </p>
+
+    <p class="ruby">
+      Output:<br>
+      <br>
+      Store: Urban Outfitters<br>
+      Location: New York, NY<br>
+      $$<br>
+      I love this backpack - it's so worth the price!<br>
+    </p>
+
+    <p>
+      Awesome - now everyone can carry their laptops to DBC in style ;)
+    </p>
+  </body>
+</html>
+
