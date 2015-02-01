@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Classin' It Up!</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Me</a>
+  </div>
+
+  <div id="title">
+  <h1>Classin It Up!</h1>
+  <h2>Classes, instance methods, and instance variables</h2>
+  <h4>January 23, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="http://tracyteague.github.io/blog/c5-feedback.html">U2W2: Pairing and Feedback: A reflection on peer-pairing at DBC</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t5-ruby-classes">U2W2: Classin' It Up: Classes, instance methods, and instance variables</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c4-tech-issues.html">U2W1: Hacking and Password Protection: How do they do it, and how can I be safe?</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t4-enumerable-methods.html">U2W1: Enumerable#map: A lesson on .map, and how it's different from .each</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t3-arrays-hashes.html">U1W3: What's the Difference?! Part 2: Arrays vs. Hashes</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c3_thinking-style.html">U1W3: A Reflection on Phase 0, Unit 1: Thinking Style and Learning</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t2-css-design.html">U1W2: What's the Difference?! Margin, Border, and Padding</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t1-git-blog.html">U1W1: Git Bloggin': Version Control, git, and GitHub</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c1-chefs-kitchen.html">U1W1: Chefs in the Kitchen: Getting the knives sharpened and the food prepped</a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+    <h4>WHAT ARE BLOCKS, PROCS, AND LAMBDAS? </h4>
+
+      <p>
+        Blocks, procs, and lambdas are all examples of closures in Ruby – or, simply put, ways of grouping code that we want to run. Let’s check out the syntax for each:
+      </p>
+      <p class="ruby">
+        #====Block====<br>
+            <br>
+        num_array = [1,2,3,4] <br>
+        num_array.each { |x| puts x*2 }    <br>
+        end<br>
+        <br>
+        # => [2, 4, 6, 8] <br>
+        <br>
+        # block is in between the curly braces   <br>
+        <br>
+        # OR<br>
+        <br>
+        num_array = [1,2,3,4] <br>
+        [1,2,3,4].each do |x|<br>
+             puts x*2            <br>
+        end    <br>
+        # => [2, 4, 6, 8] <br>
+        <br>
+        # block is everything between the do and end<br>
+        <br>
+        #====Proc====<br>
+         <br>
+        num_array = [1,2,3,4] <br>
+        p = Proc.new { |x| puts x*2 }<br>
+        num_array.each(&p) <br>
+        <br>
+        # => [2, 4, 6, 8] <br>
+                  <br>
+        # The '&' tells ruby to turn the proc into a block <br>
+        <br>
+        proc = Proc.new { puts "Hello World" }<br>
+        proc.call <br>
+        <br>
+        # => [“Hello World”] <br>
+        <br>
+        # The body of the Proc object gets executed when called<br>
+        <br>
+        #====Lambda====<br>
+        <br>
+        num_array = [1,2,3,4]    <br>
+        lam = lambda { |x| puts x*2 }<br>
+        [1,2,3,4].each(&lam) <br>
+        <br>
+        # => [2, 4, 6, 8] <br>
+        <br>
+        lam = lambda { puts "Hello World" }<br>
+        lam.call<br>
+        <br>
+        # => [“Hello World”]
+      </p>
+      <p>
+       At first glance, they definitely seem to be pretty similar, but let’s discuss each and the subtle differences between blocks, procs and lambdas.
+      </p>
+
+    <h4>BLOCKS</h4>
+
+      <p>
+        A block is the most common and easy way to use closures in Ruby, and provides a flexible way to interact with the method.
+      </p>
+      <p class="ruby">
+        class Block<br>
+              def perform<br>
+                    yield self<br>
+                end<br>
+        end<br>
+
+        # block<br>
+        my_string = "This is a string "<br>
+         <br>
+        my_string.perform do |n|<br>
+        puts  n + "from a block!" <br>
+        end<br>
+        <br>
+            #=> This is a string from a block! <br>
+      </p>
+      <p>
+        Blocks are great because they are so simple, but what if we want to have many different blocks and use them multiple times? That’s where Procs come in!
+      </p>
+
+    <h4>PROCS</h4>
+
+      <p>
+        A proc (short for procedure) allows you to save useable code as an object itself.
+      </p>
+      <p class="ruby">
+        class Proc<br>
+          def perform(code) <br>
+            code.call(self) <br>
+          end<br>
+        end<br>
+            <br>
+        # proc: calling like a block<br>
+        my_string2 = "This is another string "<br>
+        my_string2.perform( Proc.new do |n|<br>
+             puts  n + "from a proc calling like a block!" <br>
+        end) <br>
+        #=> This is another string from a proc calling like a block! <br>
+        <br>
+        # proc: storing into a variable<br>
+        my_string = "This is a string "<br>
+        proc_code = Proc.new do |n|<br>
+          puts  n + "from a proc storing into a variable!" <br>
+        end<br>
+        my_string.perform(proc_code) <br>
+        <br>
+        #=> This is a string from a proc storing into a variable! <br>
+      </p>
+      <p>
+        Although the majority of the code for a proc looks the same as a block, the two subtle, but major, differences are (1) procs are objects, while blocks are not, therefore, (2), only one block can appear in an argument list, while procs.  So wait, how are lambdas different than procs?
+      </p>
+
+    <h4>LAMBDAS</h4>
+
+      <p>
+        Lambdas also look (and are) pretty similar to procs, but also have two subtle differences. We’ll use a couple of different examples to demonstrate these differences.
+      </p>
+      <p>
+        (1) Lambdas check the number of arguments passed, while procs do not.
+      </p>
+      <p class="ruby">
+        def args(code) <br>
+             one, two = 1, 2<br>
+             code.call(one, two) <br>
+        end<br>
+        <br>
+        args(Proc.new{|a, b, c| puts "Give me a #{a} and a #{b} and a #{c.class}"})<br>
+        <br>
+        # => Give me a 1 and a 2 and a NilClass<br>
+        <br>
+        args(lambda{|a, b, c| puts "Give me a #{a} and a #{b} and a #{c.class}"})<br>
+        <br>
+        # => *.rb:8: ArgumentError: wrong number of arguments (2 for 3) (ArgumentError)
+      </p>
+      <p>
+        As you can see, Procs set the extra variable “c” to “nil” (“NilClass”), while lambda returns an ArgumentError instead.
+      </p>
+      <p>
+        (2) Lambdas and procs treat the “return” keyword differently.
+      </p>
+      <p class="ruby">
+        def proc_return<br>
+        Proc.new { return "Proc.new"}.call<br>
+        return "proc_return method finished"<br>
+        end<br>
+        <br>
+        puts proc_return <br>
+        <br>
+        # => Proc.new<br>
+        <br>
+        def lambda_return<br>
+             lambda { return "lambda" }.call<br>
+             return "lambda_return method finished"<br>
+        end<br>
+        <br>
+        puts lambda_return<br>
+        <br>
+        # => lambda_return method finished
+      </p>
+      <p>
+        A Proc return will stop processing a method when return is called so that it will only return the first value (“Proc.new”) despite a second return call, while lambdas return their value to the method, allowing the method continue on, and therefore prints the final return value, “lambda_return method finished.”
+      </p>
+
+    <h4>MAJOR “TAKEAWAYS”</h4>
+
+      <p>
+        This may seem like a lot of information and code examples thrown at once, so let’s end this lesson with a review highlighting some of the major aspects: <br>
+        1. Blocks, procs, and lambdas are all examples of closures (ways of grouping code that we want to run). Block is the most simple and easy to use. <br>
+        2. The differences between blocks and procs are that (1) procs are objects, while blocks are not, and (2) one block can appear in an argument list, while procs can have many different blocks and use them multiple times. <br>
+        3. The differences between procs and lambdas are that (1) lambdas check the number of arguments passed, and (2) lambdas and procs treat the “return” keyword differently. <br>
+      </p>
+
+      <h4>RESOURCES</h4>
+
+      <p>
+        This information was adapted from: <br>
+
+        http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/<br>
+        https://jrcorner.wordpress.com/2012/10/10/ruby-block-vs-proc-new-vs-lambda-vs-methodfunc-summarized/<br>
+        http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/<br>
+      </p>
+  </body>
+</html>
+
