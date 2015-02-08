@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby Hashes vs. JavaScript Objects</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  </head>
+
+<body>
+  <div id="header">
+    <span id="socialmedia">
+      <a href="mailto:tracy.teague05@gmail.com">Gmail</a>
+      <a href="https://twitter.com/bostnTEAGUEprty">Twitter</a>
+      <a href="https://www.facebook.com/tracy.teague.54">Facebook</a>
+      <a href="https://github.com/tracyteague/">GitHub</a>
+    </span>
+    <h1>Tracy Teague's DBC Blog</h1>
+    <span id="tabs">
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Me</a>
+  </div>
+
+  <div id="title">
+  <h1>What's the Difference?! Part 3:</h1>
+  <h2>Ruby Hashes vs. JavaScript Objects</h2>
+  <h4>February 4, 2015</h4>
+</div>
+
+  <div id="archives">
+    <h4>Archives</h4>
+      <ul>
+        <li><a href="http://tracyteague.github.io/blog/c6-stereotype-threat.html">U2W3: Stereotype Threat: A look into what it entails, and how we can instill confidence in one another</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t6-oop-concepts">U2W3: Blocks, Procs, and Lambdas, Oh My!: What they are and how they differ</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c5-feedback.html">U2W2: Pairing and Feedback: A reflection on peer-pairing at DBC</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t5-ruby-classes">U2W2: Classin' It Up: Classes, instance methods, and instance variables</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c4-tech-issues.html">U2W1: Hacking and Password Protection: How do they do it, and how can I be safe?</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t4-enumerable-methods.html">U2W1: Enumerable#map: A lesson on .map, and how it's different from .each</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t3-arrays-hashes.html">U1W3: What's the Difference?! Part 2: Arrays vs. Hashes</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c3_thinking-style.html">U1W3: A Reflection on Phase 0, Unit 1: Thinking Style and Learning</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t2-css-design.html">U1W2: What's the Difference?! Margin, Border, and Padding</a></li>
+        <li><a href="http://tracyteague.github.io/blog/t1-git-blog.html">U1W1: Git Bloggin': Version Control, git, and GitHub</a></li>
+        <li><a href="http://tracyteague.github.io/blog/c1-chefs-kitchen.html">U1W1: Chefs in the Kitchen: Getting the knives sharpened and the food prepped</a></li>
+      </ul>
+    </div>
+
+  <div id="body">
+    <h4>REVIEW OF THE BASICS</h4>
+
+      <p>
+        Before we get into the discussion on Ruby hashes vs. JavaScript objects, let’s do a quick review of syntax for some of the “basics “ in Ruby and JavaScript.
+      </p>
+
+    <h4>FUNCTIONS</h4>
+
+      <p>
+        Functions in JavaScript are the same as methods in Ruby, however, the syntax of declaring a function vs. declaring a method is slightly different.
+      </p>
+
+      <p class="ruby">
+        # Ruby:<br>
+        def hello<br>
+          puts “hello”<br>
+        end<br>
+        <br>
+        // JS:<br>
+        function hello() {<br>
+          console.log(“hello”);<br>
+        }<br>
+      </p>
+
+    <h4>ARRAYS</h4>
+      <p>
+       Both Ruby and JavaScript have arrays, which are more or less logically the same; however, the Object array functions in JavaScript and the Class array methods in Ruby also have different syntax. To find the index of an element in an array:
+      </p>
+
+      <p class="ruby">
+        # Ruby:<BR>
+        array_name.index(“element”)<br>
+        <br>
+        // JS:<br>
+        arrayName.indexOf(“element”)<br>
+        <br>
+      </p>
+
+    <h4>RUBY HASHES VS. JAVASCRIPT OBJECTS</h4>
+
+      <p>
+        Now, onto our lesson! Although Ruby and JavaScript both use arrays for lists of items, sometimes, it may be easier to give each piece of data a specific name to be able to access it and retrieve it more easily. In Ruby, hashes, or key-value pairs that store information, are used for this matter, however, in JavaScript, hashes do not exist and, thus, its near equivalent – objects – would be used. Check out the example below for the general structures:
+      </p>
+
+      <p class="ruby">
+        # Ruby Hash<br>
+        <br>
+        new_hash = {<br>
+        “key1” => “value1”,<br>
+        “key2” => “value2”,<br>
+        “key3” => “value3”,<br>
+        }<br>
+         <br>
+        new_hash[“key1”] # Accesses the current “value1” value at the “key1” key<br>
+         <br>
+         <br>
+        // JavaScript Objects<br>
+         <br>
+        var newObject = {<br>
+        property1: “variable1”<br>
+        property2: “variable2”<br>
+        property3: “variable3”<br>
+        }<br>
+         <br>
+        newObject.property1 // Accesses the current variable “variable1” at “property1”<br>
+        newObject[“property1”] // Also accesses the current variable “variable1” at “property1”
+      </p>
+      <p>
+        As mentioned, a Ruby hash is a collection of key-value pairs that stores information. These values can be accessed by calling on the key that corresponds to each value, and these values may be strings, integers, arrays, or other hashes.  We’ll create a hash to store some information about DBC:
+      </p>
+      <p class="ruby">
+        dbc_sea_lions = {<br>
+          “Year” => 2015;<br>
+          “Cohort1” => “NYC”;<br>
+          “Cohort2” => “SF”;<br>
+          “Cohort3” => “Chicago”;<br>
+          “Cohort4” => “Columbus”;<br>
+        }<br>
+         <br>
+        p dbc_sea_lions<br>
+        # use “p” to display the hash to the console<br>
+        # => is a hash-rocket for the key => value pair<br>
+        # used “quotation marks” for all string keys and values<br>
+      </p>
+      <p>
+        JavaScript objects work similarly to Ruby hashes. The equivalent of Ruby “keys” would be “properties” in JavaScript. Each property is a variable, and each variable may also be a string, number, function, or other object.  Using the above example, we’ll now store this information into a JavaScript object:
+      </p>
+      <p class="ruby">
+        var dbcSeaLions = {<br>
+          year: 2015;<br>
+          cohort1: “NYC”;<br>
+          cohort2: “SF”;<br>
+          cohort3: “Chicago”;<br>
+          cohort4: “Columbus”;<br>
+        }<br>
+       <br>
+        console.log(dbcSeaLions)<br>
+        // use console.log() to print the object to the console<br>
+        // colons (:) are used to separate the property and variable<br>
+        // only used “quotation marks” for string variables
+      </p>
+      <p>
+        I hope that this brief introductory lesson helped you to notice the minor differences between Ruby hashes and JavaScript objects. Cheers, DBC Sea Lions!
+      </p>
+  </body>
+</html>
+
