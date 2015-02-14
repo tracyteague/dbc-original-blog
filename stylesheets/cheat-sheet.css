@@ -1,0 +1,44 @@
+
+body {
+  margin: 50px;
+  font-family: Georgia;
+  background-color: white;
+  color: black;
+}
+
+h5 {
+  color: black;
+}
+header {
+  font-weight: bold;
+  text-align: center;
+}
+
+h4 {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+table {
+  border: 2px solid pink;
+}
+
+thead {
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid pink;
+}
+
+td {
+  border: 2px solid pink;
+  padding: 10px;
+}
+
+a {
+  color: pink;
+}
+
+a:visited {
+  color: gray;
+}

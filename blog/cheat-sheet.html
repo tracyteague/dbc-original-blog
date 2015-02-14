@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheat Sheet: Enumerables</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+  </head>
+
+<body>
+  <header>
+    <h1>Enumerables Cheat Sheet</h1>
+    <h5>February 13, 2015<br>
+    by Susan Schmidt and Tracy Teague</h5>
+  </header>
+
+  <section>
+    <h4>Enumerables</h4>
+      <p>
+       Enumerables give you many useful ways of doing something to every element of a collection object (an array or hash, for instance), which is a very common thing to do when you're building programs and websites.
+      </p>
+      <p>
+        An enumerable must provide a method #each in its class to yield successive members of the collection. #each calls the given block once for each element in self, passing that element as a parameter. For example:
+        <pre class="prettyprint lang-ruby">
+> [1,2,3].each { |num| print "#{num}!" }
+1! 2! 3! => [1,2,3]
+            </pre>
+        Two of the most commonly used enumerables are #map and #select.
+      </p>
+  </section>
+
+  <section class = "table">
+    <h4>Enumerables: #map and #select</h4>
+      <table>
+        <thead>
+          <tr>
+            <td>Method Name</td>
+            <td>Input</td>
+            <td>Example</td>
+            <td>Output</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>#map</td>
+            <td><i>Takes an array</i><pre class="prettyprint lang-ruby">
+my_array = [2, 4, 6, 8, 100]
+            </pre></td>
+            <td><pre class="prettyprint lang-ruby">
+> my_array.map{|num| num**2 }
+=> [4,16,36,64,10000]
+            </pre></td>
+            <td><i>Returns an array</i></td>
+            <td><i>(Same as #collect)<br>#map performs a specified action on each element and returns a new array filled with whatever gets returned by the block each time it runs.</i></td>
+          </tr>
+          <tr>
+            <td>#select</td>
+            <td><i>Takes an array or hash</i><pre class="prettyprint lang-ruby">
+my_array = [2, 4, 6, 8, 100]
+            <td><pre class="prettyprint lang-ruby">
+> my_array.select{ |item| item%2==0 }
+=> [2,4,6,8,100]
+            </pre></td>
+            <td><i>Returns an array</i></td>
+            <td><i>#select returns a new object as an array filled with only those original items for which the block returns true.</i></td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+
+  <sectionn class = "table">
+    <h4>Additional Basic Methods</h4>
+      <table>
+        <thead>
+          <tr>
+            <td>Method Name</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>#any?</td>
+            <td><i>Returns true/false and answers the question, "do any of the elements in this object pass the test in my block?". If your block returns true on any time it runs, any? will return true.</i></td>
+          </tr>
+          <tr>
+            <td>#all?</td>
+            <td><i>Returns true/false and answers the question, "do all of the elements of this object pass the test in my block?". Every time the block runs it must return true for this method to return true.</i></td>
+          </tr>
+          <tr>
+            <td>#find</td>
+            <td><i>Returns the first item in your object for which the block returns true.</i></td>
+          </tr>
+          <tr>
+            <td>#group_by</td>
+            <td><i>Runs your block and returns a hash that groups all the different types of returns from that block.</i></td>
+          </tr>
+          <tr>
+            <td>#include?</td>
+            <td><i>Returns true if any element of your block is equal to the object.</i></td>
+          </tr>
+          <tr>
+            <td>#none</td>
+            <td><i>Returns true only if none of the elements in the object return true when the block is run.</i></td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+
+  <section>
+   <h4>Helpful Resources</h4>
+      <p>
+        <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">Blog Post: Ruby Explained</a><br>
+        <a href="http://ruby-doc.org//core-2.2.0/Array.html#method-i-each">Ruby Docs: Array</a><br>
+        <a href="http://ruby-doc.org/core-2.1.0/Hash.html">Ruby Docs: Hash</a><br>
+      </p>
+  </section>
+</body>
+</html>
