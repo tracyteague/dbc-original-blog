@@ -1,9 +1,12 @@
-
+html {
+  background-color: #F8F8F8;
+}
 body {
   margin: 50px;
   font-family: Georgia;
   background-color: white;
   color: black;
+  padding: 20px;
 }
 
 h5 {
